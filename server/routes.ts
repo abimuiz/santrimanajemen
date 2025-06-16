@@ -196,7 +196,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       
       const workbook = new ExcelJS.Workbook();
-      await workbook.xlsx.read(req.file.buffer);
+      const buffer = Buffer.from(req.file.buffer);
+      await workbook.xlsx.load(buffer);
       
       const worksheet = workbook.getWorksheet(1);
       if (!worksheet) {

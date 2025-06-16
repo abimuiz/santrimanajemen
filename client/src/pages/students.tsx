@@ -140,8 +140,8 @@ export default function Students() {
   };
 
   // Get unique values for filters
-  const uniqueClasses = [...new Set(students?.map(s => s.kelas) || [])];
-  const uniqueVillages = [...new Set(students?.map(s => s.desa) || [])];
+  const uniqueClasses = Array.from(new Set(students?.map(s => s.kelas) || []));
+  const uniqueVillages = Array.from(new Set(students?.map(s => s.desa) || []));
 
   return (
     <div className="flex-1 overflow-y-auto">
@@ -178,12 +178,12 @@ export default function Students() {
             />
           </div>
 
-          <Select value={selectedClass} onValueChange={setSelectedClass}>
+          <Select value={selectedClass || "all"} onValueChange={(value) => setSelectedClass(value === "all" ? "" : value)}>
             <SelectTrigger className="w-48">
               <SelectValue placeholder="Semua Kelas" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Semua Kelas</SelectItem>
+              <SelectItem value="all">Semua Kelas</SelectItem>
               {uniqueClasses.map((kelas) => (
                 <SelectItem key={kelas} value={kelas}>
                   Kelas {kelas}
@@ -192,12 +192,12 @@ export default function Students() {
             </SelectContent>
           </Select>
 
-          <Select value={selectedVillage} onValueChange={setSelectedVillage}>
+          <Select value={selectedVillage || "all"} onValueChange={(value) => setSelectedVillage(value === "all" ? "" : value)}>
             <SelectTrigger className="w-48">
               <SelectValue placeholder="Semua Desa" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Semua Desa</SelectItem>
+              <SelectItem value="all">Semua Desa</SelectItem>
               {uniqueVillages.map((desa) => (
                 <SelectItem key={desa} value={desa}>
                   {desa}
@@ -206,12 +206,12 @@ export default function Students() {
             </SelectContent>
           </Select>
 
-          <Select value={selectedAgeRange} onValueChange={setSelectedAgeRange}>
+          <Select value={selectedAgeRange || "all"} onValueChange={(value) => setSelectedAgeRange(value === "all" ? "" : value)}>
             <SelectTrigger className="w-48">
               <SelectValue placeholder="Semua Umur" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Semua Umur</SelectItem>
+              <SelectItem value="all">Semua Umur</SelectItem>
               <SelectItem value="12-15">12-15 tahun</SelectItem>
               <SelectItem value="16-18">16-18 tahun</SelectItem>
               <SelectItem value="19+">19+ tahun</SelectItem>

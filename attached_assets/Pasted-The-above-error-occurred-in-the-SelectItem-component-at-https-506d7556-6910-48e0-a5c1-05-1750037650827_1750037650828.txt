@@ -1,0 +1,40 @@
+The above error occurred in the <SelectItem> component:
+
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=925a2018:857:7
+    at _c11 (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/src/components/ui/select.tsx:208:13)
+    at div
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-KYDO7B72.js?v=75e3778e:42:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-EVLBUYTV.js?v=75e3778e:79:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-EVLBUYTV.js?v=75e3778e:56:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-3GZMKQ26.js?v=75e3778e:39:15
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=925a2018:768:13
+    at div
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-EVLBUYTV.js?v=75e3778e:79:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-EVLBUYTV.js?v=75e3778e:56:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-3GZMKQ26.js?v=75e3778e:39:15
+    at Provider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:58:15)
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=925a2018:311:58
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-EVLBUYTV.js?v=75e3778e:79:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-EVLBUYTV.js?v=75e3778e:56:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-KYDO7B72.js?v=75e3778e:42:13
+    at https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:403:22
+    at SelectPortal
+    at _c7 (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/src/components/ui/select.tsx:123:12)
+    at Provider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:58:15)
+    at Provider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:58:15)
+    at CollectionProvider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-3GZMKQ26.js?v=75e3778e:29:13)
+    at Provider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:58:15)
+    at Provider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:58:15)
+    at Popper (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-ADYLXX3K.js?v=75e3778e:1953:11)
+    at Select (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=925a2018:99:5)
+    at div
+    at div
+    at div
+    at Students (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/src/pages/students.tsx:34:27)
+    at Route (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3e01bc74:323:16)
+    at Switch (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3e01bc74:379:17)
+    at div
+    at Router
+    at Provider (https://506d7556-6910-48e0-a5c1-05c69082d447-00-8ecmu37l1c8h.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-DGVC3TXM.js?v=75e3778e:58:15)
+    at TooltipProvider…
+A  must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
