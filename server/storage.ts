@@ -26,6 +26,107 @@ export class MemStorage implements IStorage {
     this.students = new Map();
     this.currentId = 1;
     this.currentSequence = 1;
+    this.initializeSampleData();
+  }
+
+  private async initializeSampleData() {
+    // Add sample data for demonstration
+    const sampleStudents = [
+      {
+        nama: "Ahmad Fadli Rahman",
+        nik: "3201234567890123",
+        noKk: "3201234567890123",
+        jenisKelamin: "L",
+        tempatLahir: "Jakarta",
+        tanggalLahir: "2007-05-15",
+        agama: "Islam",
+        kewarganegaraan: "WNI",
+        anakKe: 1,
+        jumlahSaudara: 2,
+        alamat: "Jl. Masjid No. 15 RT 01 RW 02",
+        rt: "001",
+        rw: "002",
+        desa: "Sukamaju",
+        dusun: "Mekar",
+        kecamatan: "Cibitung",
+        kabupaten: "Bekasi",
+        provinsi: "Jawa Barat",
+        namaAyah: "Budi Rahman",
+        nikAyah: "3201234567890124",
+        pekerjaanAyah: "Petani",
+        namaIbu: "Siti Aminah",
+        nikIbu: "3201234567890125",
+        pekerjaanIbu: "Ibu Rumah Tangga",
+        kelas: "VII A",
+        keterangan: "Santri reguler",
+        noWa: "081234567890",
+        tanggalMasuk: "2024-07-15",
+      },
+      {
+        nama: "Fatimah Zahra",
+        nik: "3201234567890126",
+        noKk: "3201234567890127",
+        jenisKelamin: "P",
+        tempatLahir: "Bandung",
+        tanggalLahir: "2008-03-20",
+        agama: "Islam",
+        kewarganegaraan: "WNI",
+        anakKe: 2,
+        jumlahSaudara: 1,
+        alamat: "Jl. Pesantren No. 25 RT 03 RW 01",
+        rt: "003",
+        rw: "001",
+        desa: "Sukahati",
+        dusun: "Indah",
+        kecamatan: "Cibitung",
+        kabupaten: "Bekasi",
+        provinsi: "Jawa Barat",
+        namaAyah: "Ali Hassan",
+        nikAyah: "3201234567890128",
+        pekerjaanAyah: "Guru",
+        namaIbu: "Khadijah",
+        nikIbu: "3201234567890129",
+        pekerjaanIbu: "Pedagang",
+        kelas: "VIII B",
+        keterangan: "Santri berprestasi",
+        noWa: "081234567891",
+        tanggalMasuk: "2023-07-15",
+      },
+      {
+        nama: "Muhammad Iqbal",
+        nik: "3201234567890130",
+        noKk: "3201234567890131",
+        jenisKelamin: "L",
+        tempatLahir: "Bogor",
+        tanggalLahir: "2006-12-10",
+        agama: "Islam",
+        kewarganegaraan: "WNI",
+        anakKe: 3,
+        jumlahSaudara: 2,
+        alamat: "Jl. Pondok No. 8 RT 02 RW 03",
+        rt: "002",
+        rw: "003",
+        desa: "Sukamaju",
+        dusun: "Sejahtera",
+        kecamatan: "Tambun",
+        kabupaten: "Bekasi",
+        provinsi: "Jawa Barat",
+        namaAyah: "Usman Hakim",
+        nikAyah: "3201234567890132",
+        pekerjaanAyah: "Buruh",
+        namaIbu: "Aisyah",
+        nikIbu: "3201234567890133",
+        pekerjaanIbu: "Ibu Rumah Tangga",
+        kelas: "IX A",
+        keterangan: "",
+        noWa: "081234567892",
+        tanggalMasuk: "2022-07-15",
+      }
+    ];
+
+    for (const studentData of sampleStudents) {
+      await this.createStudent(studentData);
+    }
   }
 
   async getStudent(id: number): Promise<Student | undefined> {
