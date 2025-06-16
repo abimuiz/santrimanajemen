@@ -228,22 +228,46 @@ export default function Students() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>No</TableHead>
+                    <TableHead className="w-16">No. Urut</TableHead>
+                    <TableHead>No. Reg</TableHead>
                     <TableHead>NIS</TableHead>
-                    <TableHead>Nama Lengkap</TableHead>
-                    <TableHead>Kelas</TableHead>
+                    <TableHead>Nama</TableHead>
+                    <TableHead>NIK</TableHead>
+                    <TableHead>No. KK</TableHead>
                     <TableHead>Jenis Kelamin</TableHead>
+                    <TableHead>Tempat Lahir</TableHead>
+                    <TableHead>Tanggal Lahir</TableHead>
                     <TableHead>Umur</TableHead>
+                    <TableHead>Agama</TableHead>
+                    <TableHead>Kewarganegaraan</TableHead>
+                    <TableHead>Anak Ke</TableHead>
+                    <TableHead>Jumlah Saudara</TableHead>
+                    <TableHead>Alamat</TableHead>
+                    <TableHead>RT</TableHead>
+                    <TableHead>RW</TableHead>
                     <TableHead>Desa</TableHead>
+                    <TableHead>Dusun</TableHead>
+                    <TableHead>Kecamatan</TableHead>
+                    <TableHead>Kabupaten</TableHead>
+                    <TableHead>Provinsi</TableHead>
+                    <TableHead>Nama Ayah</TableHead>
+                    <TableHead>NIK Ayah</TableHead>
+                    <TableHead>Pekerjaan Ayah</TableHead>
+                    <TableHead>Nama Ibu</TableHead>
+                    <TableHead>Pekerjaan Ibu</TableHead>
+                    <TableHead>NIK Ibu</TableHead>
+                    <TableHead>Kelas</TableHead>
+                    <TableHead>Keterangan</TableHead>
                     <TableHead>No. WA</TableHead>
-                    <TableHead>Aksi</TableHead>
+                    <TableHead>Tanggal Masuk</TableHead>
+                    <TableHead className="w-32">Aksi</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {isLoading ? (
                     Array.from({ length: 5 }).map((_, index) => (
                       <TableRow key={index}>
-                        {Array.from({ length: 9 }).map((_, cellIndex) => (
+                        {Array.from({ length: 33 }).map((_, cellIndex) => (
                           <TableCell key={cellIndex}>
                             <div className="h-4 bg-muted rounded animate-pulse" />
                           </TableCell>
@@ -253,10 +277,12 @@ export default function Students() {
                   ) : students && students.length > 0 ? (
                     students.map((student, index) => (
                       <TableRow key={student.id}>
-                        <TableCell>{String(index + 1).padStart(3, '0')}</TableCell>
+                        <TableCell className="font-medium">{student.noUrut}</TableCell>
+                        <TableCell>{student.noReg}</TableCell>
                         <TableCell className="font-medium">{student.nis}</TableCell>
                         <TableCell>{student.nama}</TableCell>
-                        <TableCell>{student.kelas}</TableCell>
+                        <TableCell>{student.nik}</TableCell>
+                        <TableCell>{student.noKk}</TableCell>
                         <TableCell>
                           <Badge 
                             variant={student.jenisKelamin === 'L' ? 'default' : 'secondary'}
@@ -265,18 +291,40 @@ export default function Students() {
                             {formatGender(student.jenisKelamin)}
                           </Badge>
                         </TableCell>
+                        <TableCell>{student.tempatLahir}</TableCell>
+                        <TableCell>{new Date(student.tanggalLahir).toLocaleDateString('id-ID')}</TableCell>
                         <TableCell>{student.umur} tahun</TableCell>
+                        <TableCell>{student.agama}</TableCell>
+                        <TableCell>{student.kewarganegaraan}</TableCell>
+                        <TableCell>{student.anakKe || '-'}</TableCell>
+                        <TableCell>{student.jumlahSaudara || '-'}</TableCell>
+                        <TableCell className="max-w-40 truncate" title={student.alamat}>{student.alamat}</TableCell>
+                        <TableCell>{student.rt || '-'}</TableCell>
+                        <TableCell>{student.rw || '-'}</TableCell>
                         <TableCell>{student.desa}</TableCell>
+                        <TableCell>{student.dusun || '-'}</TableCell>
+                        <TableCell>{student.kecamatan}</TableCell>
+                        <TableCell>{student.kabupaten}</TableCell>
+                        <TableCell>{student.provinsi}</TableCell>
+                        <TableCell>{student.namaAyah}</TableCell>
+                        <TableCell>{student.nikAyah || '-'}</TableCell>
+                        <TableCell>{student.pekerjaanAyah || '-'}</TableCell>
+                        <TableCell>{student.namaIbu}</TableCell>
+                        <TableCell>{student.pekerjaanIbu || '-'}</TableCell>
+                        <TableCell>{student.nikIbu || '-'}</TableCell>
+                        <TableCell>{student.kelas}</TableCell>
+                        <TableCell className="max-w-32 truncate" title={student.keterangan || '-'}>{student.keterangan || '-'}</TableCell>
                         <TableCell>{student.noWa || '-'}</TableCell>
+                        <TableCell>{new Date(student.tanggalMasuk).toLocaleDateString('id-ID')}</TableCell>
                         <TableCell>
-                          <div className="flex items-center space-x-2">
+                          <div className="flex items-center space-x-1">
                             <Button
                               variant="ghost"
                               size="sm"
                               onClick={() => handleViewStudent(student)}
                               title="View Details"
                             >
-                              <Eye className="w-4 h-4" />
+                              <Eye className="w-3 h-3" />
                             </Button>
                             <Button
                               variant="ghost"
@@ -284,7 +332,7 @@ export default function Students() {
                               onClick={() => handleEditStudent(student)}
                               title="Edit"
                             >
-                              <Edit className="w-4 h-4" />
+                              <Edit className="w-3 h-3" />
                             </Button>
                             <Button
                               variant="ghost"
@@ -292,7 +340,7 @@ export default function Students() {
                               onClick={() => handlePrintPDF(student)}
                               title="Print PDF"
                             >
-                              <Printer className="w-4 h-4" />
+                              <Printer className="w-3 h-3" />
                             </Button>
                             <Button
                               variant="ghost"
@@ -301,7 +349,7 @@ export default function Students() {
                               title="Delete"
                               className="text-destructive hover:text-destructive"
                             >
-                              <Trash2 className="w-4 h-4" />
+                              <Trash2 className="w-3 h-3" />
                             </Button>
                           </div>
                         </TableCell>
@@ -309,7 +357,7 @@ export default function Students() {
                     ))
                   ) : (
                     <TableRow>
-                      <TableCell colSpan={9} className="text-center text-muted-foreground py-8">
+                      <TableCell colSpan={33} className="text-center text-muted-foreground py-8">
                         Tidak ada data santri
                       </TableCell>
                     </TableRow>
